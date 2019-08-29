@@ -57,7 +57,7 @@ class Matrix {
     }
 }
 
-public class Main {
+public class MatrixDemo {
 	public static void main(String[] args) {
 	    Matrix ob1 = new Matrix();
 	    Matrix ob2 = new Matrix(ob1);
