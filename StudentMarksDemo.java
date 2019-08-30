@@ -11,8 +11,8 @@ class Student {
         n = in.nextInt();
         mat = new float [m + 2][n + 2];
         
-        for(int i = 0; i < m; ++i) {
-            for(int j = 0; j < n; ++j) {
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
                 mat[i][j] = in.nextFloat();
             }
         }
@@ -21,25 +21,23 @@ class Student {
     void calcResults() {
         float sum = 0;
         
-        for(int i = 0; i < m; ++i) {
-            for(int j = 0; j <= n; ++j) {
-                if (j == n) {
-                    mat[i][n] = sum;
-                    mat[i][n + 1] = sum / n;
-                } else sum += mat[i][j];
-            }
-            sum = 0;
-        }
+        for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
+				sum += mat[i][j];
+			}
+			mat[i][n] = sum;
+			mat[i][n+1] = (float) sum / n;
+			sum = 0;
+	}
         
-        for(int i = 0; i < n; ++i) {
-            for(int j = 0; j <= m; ++j) {
-                if (j == m) {
-                    mat[m][j] = sum;
-                    mat[m + 1][j] = sum / m;
-                } else sum += mat[i][j];
-            }
-            sum = 0;
-        }
+       for (int j = 0; j < n; j++) {
+		for (int i = 0; i < m; i++) {
+				sum += mat[i][j];
+		}
+		mat[m][j] = sum;
+		mat[n+1][j] = (float) sum / m;;
+		sum = 0;
+		}
         
         for(int i = 0; i < m; ++i) {
             for(int j = 0; j < n; ++j) {
