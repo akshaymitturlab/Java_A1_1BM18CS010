@@ -31,13 +31,34 @@ public class SemiPrime
     }
     
     static void input() {
+        int arr[] = new int[100];
+        
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Number: ");
         int num = sc.nextInt();
-        if (isSemiPrime(num)) System.out.println("SemiPrime!");
-        else System.out.println("Not SemiPrime");
+        int count = 0, flag = 0;
+
+        for (int i = 0; i < 200; i++) {
+            if (isSemiPrime(i)) {
+                arr[count] = i;
+                ++count;
+            }
+        }
+        
+        for (int i = 0; i < arr.length; ++i) {
+            for (int j = 0; j < arr.length; ++j) {
+                if (arr[i] + arr[j] == num) flag = 1;
+            }
+        }
+        
+        if (flag == 0) System.out.println("No!");
+        else System.out.println("Yes!");
     }
     
+	public static void main(String[] args) {
+		input();
+	}
+}
 	public static void main(String[] args) {
 		input();
 	}
