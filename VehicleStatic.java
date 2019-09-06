@@ -17,13 +17,13 @@ class Vehicle {
         System.out.println("Year " + year);
         System.out.println("Color:  " + color);
     }
+    
+    static void numbercars() {
+        System.out.println("Count:  " + total_number_of_vehicles);
+    }
 }
 
 public class VehicleStatic {
-    static void numbercars(Vehicle ob) {
-        System.out.println("Count:  " + ob.total_number_of_vehicles);
-    }
-    
     public static void main(String Args[]) {
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
         int n = sc.nextInt();
@@ -36,6 +36,6 @@ public class VehicleStatic {
             ob[i] = new Vehicle(a, b, c);
         }
         
-        numbercars(ob[0]);
+        Vehicle.numbercars();
     }
 }
