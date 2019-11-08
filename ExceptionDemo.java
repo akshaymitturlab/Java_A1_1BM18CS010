@@ -17,22 +17,28 @@ class Father {
     
     Father() {
         Scanner sc = new Scanner(System.in);
-        Fage = sc.nextInt();
+        do {
+            Fage = sc.nextInt();
+            if (Fage <= 0 ) System.out.println("Enter Valid Age");
+        } while (Fage <= 0);
     }
-}
+} 
 
 class Son extends Father {
     int Sage;
     
     Son() throws WrongAge {
         Scanner sc = new Scanner(System.in);
-        Sage = sc.nextInt();
+        do {
+            Sage = sc.nextInt();
+            if (Sage <= 0 ) System.out.println("Enter Valid Age");
+        } while (Sage <= 0);
         
         if (Sage == Fage) throw new WrongAge("LOL");
     }
 }
 
-public class ExceptionDemo {
+public class Main {
 	public static void main(String[] args) {
 	    try {
 	        Son ob = new Son();   
